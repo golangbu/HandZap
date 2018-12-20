@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addProductMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical">
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:local="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:popupTheme="@style/AppTheme"
+            android:background="@color/colorPrimary"
+            >
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+
+                android:src="@drawable/ic_arrow_left" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="250dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:maxEms="25"
+                    android:maxLines="1"
+
+                    android:scrollHorizontally="true"
+                    android:text="New Post"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size_large" />
+                <TextView
+                    android:id="@+id/post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:text="Post"/>
+
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/nameTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/rl_parent_logo_image"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_product_name"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="Enter Post Title"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLines="4"
+                    android:singleLine="false"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/descriptionTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_product_description"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="Describe Your Post*"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="5000"
+                    android:maxLines="15"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/unitTextInputLayout"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_unit_mesure"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/icon_menu_grid_w"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Select Post Catagories"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etBusinessCategory"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_more"
+                    android:hint="Business category*"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilProductCategory"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etProductCategory"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_more"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Product category*"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilProductSubCategory"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/etProductSubCategory"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_more"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Product sub-category"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_unites"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_chevron_right"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Unites "
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/minQuantityTextInputLayout"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_min_odr_qty"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:digits="0123456789"
+                    android:hint="Minimum order quantity"
+                    android:inputType="numberDecimal"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_max_odr_qty"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="Maximum Order Quantity "
+                    android:inputType="numberDecimal"
+                    android:maxLength="7"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_price_detailssh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_offer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/et_offer"
+                        fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789."
+                        android:hint="Offer price"
+                        android:inputType="numberDecimal"
+                        android:maxLength="7"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:theme="@style/myEditText" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/priceTextInputLayout"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/et_price"
+                        fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789."
+                        android:hint="Original price"
+                        android:inputType="numberDecimal"
+                        android:maxLength="7"
+                        android:singleLine="true"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:theme="@style/myEditText" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTaxesInfo"
+                fontPath="fonts/DINNextRoundedLTPro-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_bg_rectangle_dashed"
+                android:gravity="center"
+                android:text="Add taxes info"
+                android:textAllCaps="false"
+                android:textColor="@color/content_color"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <TextView
+                android:id="@+id/tvTaxesInfoValue"
+                fontPath="fonts/DINNextRoundedLTPro-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_10sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_price_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextLabel">
+
+                    <EditText
+                        fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Budget"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:theme="@style/myEditText" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/spinnerCurrency"
+                        style="@style/style_Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/common_gray_color" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llProductAvailability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextLabel">
+
+                    <EditText
+                        fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Rate"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:theme="@style/myEditText" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:hintTextAppearance="@style/TextLabel">
+
+                        <EditText
+                            fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:id="@+id/spinnerAvailability"
+                            android:hint="Payment Method"
+                            android:inputType="phone"
+                            android:singleLine="true"
+                            android:textColor="@color/title_color"
+                            android:textSize="@dimen/text_size_16sp"
+                            android:theme="@style/myEditText" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!--<Spinner-->
+                        <!--android:id="@+id/spinnerAvailability"-->
+                        <!--style="@style/style_Spinner"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1" />-->
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/input_text_color" />-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputServiceAvailability"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/inputAvailability"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_more"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Select availability"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/et_search_text"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Post Location"
+                    android:maxLength="150"
+                    android:drawableRight="@drawable/ic_location_on"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_price_detailss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:hintTextAppearance="@style/TextLabel">
+
+                    <EditText
+                        fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Start Date"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:theme="@style/myEditText" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+
+                    android:orientation="vertical">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:hintTextAppearance="@style/TextLabel">
+
+                        <EditText
+                            fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:hint="Job Term"
+                            android:inputType="phone"
+                            android:singleLine="true"
+                            android:id="@+id/spinnerCurrencys"
+                            android:textColor="@color/title_color"
+                            android:textSize="@dimen/text_size_16sp"
+                            android:theme="@style/myEditText" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!--<Spinner-->
+                        <!--android:id="@+id/spinnerCurrencys"-->
+                        <!--style="@style/style_Spinner"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1" />-->
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/input_text_color" />-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Post Attachment"
+                android:textSize="@dimen/text_size_16sp"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/input_text_color"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="#DFDDE8"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_tin_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_tin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/iv_remove_tin"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_close_yellow" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_add_tin"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/shape_bg_dashed_circle_grayed" />
+
+                        <TextView
+                            android:id="@+id/tv_tin"
+                            fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:text="image1" />
+
+                        <ProgressBar
+                            android:id="@+id/gstTINProgressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:indeterminateDrawable="@drawable/custom_progress_indeterminate"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_pan_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/rl_tin_image"
+                        android:layout_weight="1"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_pan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/iv_remove_pan"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_close_yellow" />
+
+                        <ImageView
+                            android:id="@+id/iv_add_pan"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/shape_bg_dashed_circle_grayed" />
+
+                        <TextView
+                            android:id="@+id/tv_pan"
+                            fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="5dp"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="image2" />
+
+                        <ProgressBar
+                            android:id="@+id/panProgressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:indeterminateDrawable="@drawable/custom_progress_indeterminate"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/label_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false">
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAddLabel"
+                fontPath="fonts/DINNextRoundedLTPro-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="ADD NEW LABEL"
+                android:textColor="@color/content_color"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="30dp"
+                android:layerType="software"
+                android:visibility="gone"
+                android:src="@drawable/row" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/deliveryTextInputLayout"
+                fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <EditText
+                    android:id="@+id/inputDeliveryMethod"
+                    fontPath="fonts/DINNextRoundedLTPro-Regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_more"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Delivery method"
+                    android:maxLines="3"
+                    android:visibility="gone"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_15sp"
+                    android:theme="@style/myEditText" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_next"
+                fontPath="fonts/DINNextRoundedLTPro-Medium.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:text="submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

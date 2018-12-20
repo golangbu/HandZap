@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:itemBackground">#FFFFFFFF</item>
+        <item name="colorAccent">@color/costbo_btn_end</item>
+    </style>
+
+    <style name="MyHintText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/input_text_color</item>
+    </style>
+
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/content_color</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="myEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/common_gray_color</item>
+        <item name="colorControlActivated">@color/costbo_btn_end</item>
+    </style>
+
+
+    <style name="style_Spinner">
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+
+</resources>

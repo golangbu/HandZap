@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="input_text_color">#3B4053</color>
+    <color name="send_btn_color">#5054A0</color>
+    <color name="content_color">#626675</color>
+    <color name="title_color">#3B4053</color>
+    <color name="common_gray_color">#8CC0C0C0</color>
+    <color name="costbo_btn_end">#5c60bb</color>
+    <color name="white">#ffffff</color>
+    <color name="bg_button_end">#90A6D5</color>
+    <color name="overlay">#80000000</color>
+    <color name="textColor">#ffffff</color>
+
+
+
+
+
+
+
+</resources>
